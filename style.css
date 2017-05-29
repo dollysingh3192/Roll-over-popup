@@ -1,0 +1,47 @@
+.main {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+#Tabs {
+}
+
+#Tabs ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#Tabs ul li {
+    float: left;
+    border: 1px solid #d6d6d6;
+}
+
+#Tabs ul li a {
+    display: block;
+    float: left;
+    color: #53687e;
+    background: #efefef;
+    line-height: 40px;
+    text-decoration: none;
+    padding: 0 35px 0 35px;
+    height: 40px;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+div[id^="Div_"], div[id*="Div_"] {
+    display: none;
+    border: 1px solid #61758a;
+}
+div[id^="Div_"] div, div[id*="Div_"] div {
+    height: 20px;
+    border: 1px solid #c4c4c4;
+    display: inline-block;
+    margin: 20px;
+    padding: 5px;
+    text-align: center;
+}
