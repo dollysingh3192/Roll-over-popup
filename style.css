@@ -4,7 +4,13 @@
     margin-top: 100px;
 }
 
+.header {
+    width: 763px;
+     overflow: hidden;
+}
+
 #Tabs {
+    width: 1000px;
 }
 
 #Tabs ul {
@@ -28,20 +34,23 @@
     padding: 0 35px 0 35px;
     height: 40px;
 }
-#Tabs ul li a:hover,#Tabs ul li a:focus
-{
+
+#Tabs ul li a:hover, #Tabs ul li a:focus {
     background: white;
 }
+
 .clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
+
 div[id^="Div_"], div[id*="Div_"] {
     width: 761px;
     display: none;
     border: 1px solid #61758a;
 }
+
 div[id^="Div_"] div, div[id*="Div_"] div {
     height: 20px;
     border: 1px solid #c4c4c4;
