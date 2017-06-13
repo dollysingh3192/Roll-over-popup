@@ -21,16 +21,13 @@ $(document).ready(function() {
     });
     // var slideIndex = 7;
     // showDivs(slideIndex);
-
     // window.plusDivs = function(n)
     // {
     //      showDivs(slideIndex += n);
     // }
-
     // // function plusDivs(n) {
     // //     showDivs(slideIndex += n);
     // // }
-
     // function showDivs(n) {
     //     var i;
     //     var x = document.getElementsByClassName("mySlides");
@@ -42,35 +39,45 @@ $(document).ready(function() {
     //     }
     //     var pwidth = $(".header").width();
     //     console.log(pwidth);
-
     //     var from = pwidth / n;
-
     //     for (i = 0; i < n; i++) {
     //         x[slideIndex - 1].style.display = "block";
     //     }
-
     //     for (i = n; i < x.length; i++) {
     //         x[i].style.display = "none";
     //     }
     // }
 
-    var slideIndex= 0;
-    window.plusDivs = function(n)
-    {
-         showDivs(slideIndex += n);
+    if ($('#Tabs').css('left') == '0px') {
+             $('#before').attr("disabled", true);
+        }
+    var slideIndex = 0;
+    window.plusDivs = function(n) {
+        showDivs(slideIndex += n);
     }
+
     function showDivs(n) {
-    console.log(n);
-    var tomovedivwidth = $(".mySlides").width();
-    var tomovedivwidth = $(".mySlides").outerWidth();
-    // var tomovedivwidth = document.getElementsByClassName("mySlides").offsetWidth;
+        
+        console.log(n);
+        var tomovedivwidth = $(".mySlides").width();
+        var tomovedivwidth = $(".mySlides").outerWidth();
+        // var tomovedivwidth = document.getElementsByClassName("mySlides").offsetWidth;
+        //var bordersOnBothSides = $(".mySlides").outerWidth() - $(".mySlides").innerWidth() ;
+        console.log("Move ", tomovedivwidth);
+        var tomove = tomovedivwidth * n;
+        console.log(tomove);
+        $("#Tabs").css({
+            left: -tomove
+        });
 
-    //var bordersOnBothSides = $(".mySlides").outerWidth() - $(".mySlides").innerWidth() ;
+        if ($('#Tabs').css('left') == '0px') {
+             $('#before').attr("disabled", true);
+        }
+        else
+        {
+        	$('#before').attr("disabled", false);
+        }
 
-    console.log("Move ",tomovedivwidth);
-    var tomove = tomovedivwidth * n;
-    console.log(tomove);
-    $("#Tabs").css({left: -tomove});
+        
     }
-
 });
