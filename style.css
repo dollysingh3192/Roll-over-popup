@@ -1,16 +1,26 @@
+*
+{
+     box-sizing: border-box;
+}
+
 .main {
-    width: 900px;
+    width: 755px;
     margin: 0 auto;
     margin-top: 100px;
+    border: 1px solid black;
 }
 
 .header {
-    width: 763px;
+     width: 755px;
      overflow: hidden;
+     position: relative;
+     height: 42px;
 }
 
 #Tabs {
     width: 1000px;
+    position: absolute;
+    left: 0px;
 }
 
 #Tabs ul {

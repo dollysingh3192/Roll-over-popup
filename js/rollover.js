@@ -19,30 +19,58 @@ $(document).ready(function() {
             }
         }
     });
-    var slideIndex = 7;
-    showDivs(slideIndex);
+    // var slideIndex = 7;
+    // showDivs(slideIndex);
 
-    function plusDivs(n) {
-        showDivs(slideIndex += n);
+    // window.plusDivs = function(n)
+    // {
+    //      showDivs(slideIndex += n);
+    // }
+
+    // // function plusDivs(n) {
+    // //     showDivs(slideIndex += n);
+    // // }
+
+    // function showDivs(n) {
+    //     var i;
+    //     var x = document.getElementsByClassName("mySlides");
+    //     if (n > x.length) {
+    //         slideIndex = 1
+    //     }
+    //     if (n < 1) {
+    //         slideIndex = x.length
+    //     }
+    //     var pwidth = $(".header").width();
+    //     console.log(pwidth);
+
+    //     var from = pwidth / n;
+
+    //     for (i = 0; i < n; i++) {
+    //         x[slideIndex - 1].style.display = "block";
+    //     }
+
+    //     for (i = n; i < x.length; i++) {
+    //         x[i].style.display = "none";
+    //     }
+    // }
+
+    var slideIndex= 0;
+    window.plusDivs = function(n)
+    {
+         showDivs(slideIndex += n);
     }
-
     function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) {
-            slideIndex = 1
-        }
-        if (n < 1) {
-            slideIndex = x.length
-        }
-        var pwidth = $(".header").width();
-        console.log(pwidth);
-        var from = pwidth / n;
-        for (i = from; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        for (i = 0; i < from; i++) {
-            x[slideIndex - 1].style.display = "block";
-        }
+    console.log(n);
+    var tomovedivwidth = $(".mySlides").width();
+    var tomovedivwidth = $(".mySlides").outerWidth();
+    // var tomovedivwidth = document.getElementsByClassName("mySlides").offsetWidth;
+
+    //var bordersOnBothSides = $(".mySlides").outerWidth() - $(".mySlides").innerWidth() ;
+
+    console.log("Move ",tomovedivwidth);
+    var tomove = tomovedivwidth * n;
+    console.log(tomove);
+    $("#Tabs").css({left: -tomove});
     }
+
 });
