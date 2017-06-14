@@ -51,12 +51,24 @@ $(document).ready(function() {
     if ($('#Tabs').css('left') == '0px') {
              $('#before').attr("disabled", true);
         }
+
+
+    var headerwidth = $(".header").width();
+    var tabswidth = $("#Tabs").width();
+    var remain  = tabswidth - headerwidth;
+
+        
     var slideIndex = 0;
     window.plusDivs = function(n) {
         showDivs(slideIndex += n);
     }
 
     function showDivs(n) {
+
+    	if(remain == $('#Tabs').css('left'))
+    	{
+    		$('#after').attr("disabled", true);
+    	}
         
         console.log(n);
         var tomovedivwidth = $(".mySlides").width();
@@ -77,6 +89,7 @@ $(document).ready(function() {
         {
         	$('#before').attr("disabled", false);
         }
+
 
         
     }

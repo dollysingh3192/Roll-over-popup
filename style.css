@@ -4,14 +4,14 @@
 }
 
 .main {
-    width: 755px;
+    width: 764px;
     margin: 0 auto;
     margin-top: 100px;
-    border: 1px solid black;
+   /* border: 1px solid black;*/
 }
 
 .header {
-     width: 755px;
+     width: 762.16px;
      overflow: hidden;
      position: relative;
      height: 42px;
