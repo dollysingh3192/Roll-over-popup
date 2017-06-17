@@ -13,9 +13,33 @@ $(document).ready(function() {
         for (var i = 0; i < arr.length; i++) {
             var fli = "Div_" + currentli;
             if (arr[i] == fli) {
-                $('#Div_' + currentli).css("display", "block");
+                //$('#Div_' + currentli).css("display", "block");
+                $('#Div_' + currentli).addClass("intro");
             } else {
-                $('#' + arr[i]).css("display", "none");
+                $('#' + arr[i]).removeClass("intro");
+            }
+        }
+
+        // ON Rollover
+        for (var i = 0; i < arr.length; i++) {
+            var splitName = arr[i].split("_");
+            var surname = splitName[splitName.length - 1];
+            var c = arr[i];
+            if ($('#' + c).hasClass("intro")) {
+                $('#' + c).each(function() {
+                    var context = $(this);
+                    var conlength = context.length;
+                    for (var i = 0; i < conlength; i++) {
+                        $('div',context[i]).each(function() {
+                        	//console.log($(this).outerText);
+                        	// console.log(this.innerHTML);
+                        	$(this).click(function()
+                        	{
+                        		console.log("clicked"+this.innerHTML);
+                        	});
+                        });
+                    }
+                });
             }
         }
     });
@@ -47,29 +71,21 @@ $(document).ready(function() {
     //         x[i].style.display = "none";
     //     }
     // }
-
     if ($('#Tabs').css('left') == '0px') {
-             $('#before').attr("disabled", true);
-        }
-
-
+        $('#before').attr("disabled", true);
+    }
     var headerwidth = $(".header").width();
     var tabswidth = $("#Tabs").width();
-    var remain  = tabswidth - headerwidth;
-
-        
+    var remain = tabswidth - headerwidth;
     var slideIndex = 0;
     window.plusDivs = function(n) {
         showDivs(slideIndex += n);
     }
 
     function showDivs(n) {
-
-    	if(remain == $('#Tabs').css('left'))
-    	{
-    		$('#after').attr("disabled", true);
-    	}
-        
+        if (remain == $('#Tabs').css('left')) {
+            $('#after').attr("disabled", true);
+        }
         console.log(n);
         var tomovedivwidth = $(".mySlides").width();
         var tomovedivwidth = $(".mySlides").outerWidth();
@@ -81,16 +97,17 @@ $(document).ready(function() {
         $("#Tabs").css({
             left: -tomove
         });
-
         if ($('#Tabs').css('left') == '0px') {
-             $('#before').attr("disabled", true);
+            $('#before').attr("disabled", true);
+        } else {
+            $('#before').attr("disabled", false);
         }
-        else
-        {
-        	$('#before').attr("disabled", false);
+        var disableright = parseInt($('#Tabs').css('left'));
+        var compare = parseInt(remain);
+        if (Math.floor(disableright) == ("-" + Math.floor(compare))) {
+            $('#after').attr("disabled", true);
+        } else {
+            $('#after').attr("disabled", false);
         }
-
-
-        
     }
 });

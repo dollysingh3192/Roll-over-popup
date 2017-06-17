@@ -23,6 +23,8 @@
     left: 0px;
 }
 
+
+
 #Tabs ul {
     list-style-type: none;
     margin: 0px;
@@ -68,4 +70,8 @@ div[id^="Div_"] div, div[id*="Div_"] div {
     margin: 20px;
     padding: 5px;
     text-align: center;
+}
+.intro
+{
+    display: block !important;
 }
