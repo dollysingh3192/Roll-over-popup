@@ -139,12 +139,16 @@ $(document).ready(function() {
         } else {
             $('#before').attr("disabled", false);
         }
-        var disableright = parseInt($('#Tabs').css('left'));
-        var compare = parseInt(remain);
+        setTimeout(function(){
+            var disableright = parseInt($('#Tabs').css('left'));
+            var compare = parseInt(remain);
         if (Math.floor(disableright) == ("-" + Math.floor(compare))) {
             $('#after').attr("disabled", true);
         } else {
             $('#after').attr("disabled", false);
         }
+       },1000);
+        
+        
     }
 });
