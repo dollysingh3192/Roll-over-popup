@@ -21,8 +21,9 @@
 #Tabs {
     width: 990px;
     position: absolute;
-    transition: left  .1s ease-in;
     left: 0px;
+    transition: left  1s ease-in;
+    
 }
 
 

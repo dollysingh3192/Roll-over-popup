@@ -134,20 +134,24 @@ $(document).ready(function() {
         $("#Tabs").css({
             left: -tomove
         });
+        
         if ($('#Tabs').css('left') == '0px') {
             $('#before').attr("disabled", true);
         } else {
             $('#before').attr("disabled", false);
         }
-        setTimeout(function(){
-            var disableright = parseInt($('#Tabs').css('left'));
+
+        window.setTimeout( function(){
+          var disableright = parseInt($('#Tabs').css('left'));
             var compare = parseInt(remain);
         if (Math.floor(disableright) == ("-" + Math.floor(compare))) {
             $('#after').attr("disabled", true);
         } else {
             $('#after').attr("disabled", false);
         }
-       },1000);
+        },1000);
+        
+        
         
         
     }
