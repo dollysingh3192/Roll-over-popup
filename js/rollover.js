@@ -22,21 +22,58 @@ $(document).ready(function() {
 
         // ON Rollover
         for (var i = 0; i < arr.length; i++) {
+
+            // var elmnt = document.getElementById(arr[i]);
+            // var elmntx = elmnt.offsetWidth;
+            // var elmnty = elmnt.offsetHeight;
+
             var splitName = arr[i].split("_");
             var surname = splitName[splitName.length - 1];
             var c = arr[i];
             if ($('#' + c).hasClass("intro")) {
+                var elmnt = $('#' + c).offset();
+                var elmntx = elmnt.left;
+                var elmnty = elmnt.top;
                 $('#' + c).each(function() {
                     var context = $(this);
                     var conlength = context.length;
                     for (var i = 0; i < conlength; i++) {
-                        $('div',context[i]).each(function() {
-                        	//console.log($(this).outerText);
-                        	// console.log(this.innerHTML);
-                        	$(this).click(function()
-                        	{
-                        		console.log("clicked"+this.innerHTML);
-                        	});
+                        $('div', context[i]).each(function() {
+                            //console.log($(this).outerText);
+                            // console.log(this.innerHTML);
+
+                            // $(this).click(function()
+                            // {
+                            //  console.log("clicked"+this.innerHTML);
+                            // });
+
+                            $(this).mouseover(function(e) {
+                                var offset = $(this).offset();
+                                console.log(e);
+                                // console.log(e.offsetX);
+                                // console.log(e.offsetY);
+                                // $("#popup").css("left", e.pageX);
+                                // $("#popup").css("top", e.pageY);
+
+                                $("#popup").css("left", (e.pageX));
+                                $("#popup").css("top", (e.pageY) );
+
+                                // p.html( "left: " + offset.left + ", top: " + offset.top );
+                                $("#popup").css("display", "block");
+                                $("#popup").css({
+                                    "border-color": "#61758a",
+                                    "border-width": "1px",
+                                    "border-style": "solid"
+                                });
+
+                                $("#popup").append(this.innerHTML);
+                            });
+
+                            $(this).mouseout(function() {
+                                $("#popup").css("display", "none");
+                                $("#popup").empty();
+                            });
+
                         });
                     }
                 });

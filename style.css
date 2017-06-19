@@ -4,6 +4,7 @@
 }
 
 .main {
+   
     width: 764px;
     margin: 0 auto;
     margin-top: 100px;
@@ -11,14 +12,14 @@
 }
 
 .header {
-     width: 762.16px;
+     width: 770px;
      overflow: hidden;
      position: relative;
      height: 42px;
 }
 
 #Tabs {
-    width: 980px;
+    width: 990px;
     position: absolute;
     left: 0px;
 }
@@ -32,6 +33,7 @@
 }
 
 #Tabs ul li {
+    width: 110px;
     float: left;
     border: 1px solid #d6d6d6;
 }
@@ -43,7 +45,7 @@
     background: #efefef;
     line-height: 40px;
     text-decoration: none;
-    padding: 0 35px 0 35px;
+    padding: 0 36px 0 36px;
     height: 40px;
 }
 
@@ -70,8 +72,15 @@ div[id^="Div_"] div, div[id*="Div_"] div {
     margin: 20px;
     padding: 5px;
     text-align: center;
+    cursor:pointer
 }
 .intro
 {
     display: block !important;
+}
+#popup
+{
+    float: left;
+    padding: 10px;
+    position: absolute;
 }
