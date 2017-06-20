@@ -170,7 +170,7 @@ $(document).ready(function() {
         // }
         // },100);
 
-
+        if()
         if ($('#Tabs').css('left') == '0px') {
             $('#before').attr("disabled", true);
         } else {
