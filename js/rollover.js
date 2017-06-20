@@ -120,6 +120,16 @@ $(document).ready(function() {
     }
 
     function showDivs(n) {
+
+        function myFunction() {
+            var d = new Date();
+            var n = d.getMilliseconds();
+            return n;
+            console.log("milli",n);
+        }
+        var timet = myFunction();
+        console.log("milli",timet);
+
         if (remain == $('#Tabs').css('left')) {
             $('#after').attr("disabled", true);
         }
@@ -135,24 +145,72 @@ $(document).ready(function() {
             left: -tomove
         });
         
+        $("#Tabs").css({
+            'transition-delay': '.5s'
+        });
+        
+
+        /*The Following Works*/
+
+        // window.setTimeout( function(){
+        // if ($('#Tabs').css('left') == '0px') {
+        //     $('#before').attr("disabled", true);
+        // } else {
+        //     $('#before').attr("disabled", false);
+        // }
+        // },100);
+
+        // window.setTimeout( function(){
+        //     var disableright = parseInt($('#Tabs').css('left'));
+        //     var compare = parseInt(remain);
+        // if (Math.floor(disableright) == ("-" + Math.floor(compare))) {
+        //     $('#after').attr("disabled", true);
+        // } else {
+        //     $('#after').attr("disabled", false);
+        // }
+        // },100);
+
+
         if ($('#Tabs').css('left') == '0px') {
             $('#before').attr("disabled", true);
         } else {
             $('#before').attr("disabled", false);
         }
 
-        window.setTimeout( function(){
-          var disableright = parseInt($('#Tabs').css('left'));
+
+
+
+         var elem = document.getElementById("Tabs");
+         var theCSSprop = window.getComputedStyle(elem,null).getPropertyValue("left");
+         console.log("---CSS",theCSSprop);
+
+        // window.setTimeout( function(){
+        // if ($('#Tabs').css('left') == '0px') {
+        //     $('#before').attr("disabled", true);
+        // } else {
+        //     $('#before').attr("disabled", false);
+        // }
+        // },200);
+
+        // window.setTimeout( function(){
+        //     var disableright = parseInt($('#Tabs').css('left'));
+        //     var compare = parseInt(remain);
+        // if (Math.floor(disableright) == ("-" + Math.floor(compare))) {
+        //     $('#after').attr("disabled", true);
+        // } else {
+        //     $('#after').attr("disabled", false);
+        // }
+        // },200);
+
+        var disableright = parseInt($('#Tabs').css('left'));
             var compare = parseInt(remain);
         if (Math.floor(disableright) == ("-" + Math.floor(compare))) {
             $('#after').attr("disabled", true);
         } else {
             $('#after').attr("disabled", false);
         }
-        },1000);
-        
-        
-        
         
     }
+
+
 });

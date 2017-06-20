@@ -18,15 +18,25 @@
      height: 42px;
 }
 
+
+/*The Following Works*/
+/*#Tabs {
+    width: 990px;
+    position: absolute;
+    left: 0px;
+    transition: left  .1s ease-in;
+}
+*/
+
+
 #Tabs {
     width: 990px;
     position: absolute;
     left: 0px;
-    transition: left  1s ease-in;
     
+    transition: left  .2s ease-in;
+
 }
-
-
 
 #Tabs ul {
     list-style-type: none;
