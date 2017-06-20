@@ -141,14 +141,18 @@ $(document).ready(function() {
         console.log("Move ", tomovedivwidth);
         var tomove = tomovedivwidth * n;
         console.log(tomove);
+
+       
         $("#Tabs").css({
             left: -tomove
         });
+       
         
-        $("#Tabs").css({
-            'transition-delay': '.5s'
-        });
-        
+        // window.setTimeout( function(){
+        // $("#Tabs").css({
+        //     'transition-delay': '1s'
+        // });
+        //  },200);
 
         /*The Following Works*/
 
@@ -170,14 +174,12 @@ $(document).ready(function() {
         // }
         // },100);
 
-        if()
-        if ($('#Tabs').css('left') == '0px') {
+        
+        if (tomove == 0) {
             $('#before').attr("disabled", true);
         } else {
             $('#before').attr("disabled", false);
         }
-
-
 
 
          var elem = document.getElementById("Tabs");
@@ -202,9 +204,17 @@ $(document).ready(function() {
         // }
         // },200);
 
-        var disableright = parseInt($('#Tabs').css('left'));
-            var compare = parseInt(remain);
-        if (Math.floor(disableright) == ("-" + Math.floor(compare))) {
+
+        // Please note disableright variable is getting the left value after next button get 
+        // clicked. Hence I stored it in the variable on the basis of clicked(1 click = 110px)
+        // Previously
+        // var disableright = parseInt($('#Tabs').css('left')); --> Error
+        // Fixed
+        // var disableright = parseInt(tomove); -->CORRECT
+
+        var disableright = parseInt(tomove);
+        var compare = parseInt(remain);
+        if (Math.floor(disableright) == (Math.floor(compare))) {
             $('#after').attr("disabled", true);
         } else {
             $('#after').attr("disabled", false);
